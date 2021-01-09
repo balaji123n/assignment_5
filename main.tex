@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{karnaugh-map}
+
+% ADD TITLE HERE
+\title{K-map for g}
+\author{Balaji}
+\date{7th January}
+
+\begin{document}
+
+\maketitle
+
+\section{Boolean equation}
+$g = B'C'D'+ ABCD'$
+\section {Kmap for 2.5, g}
+\begin{karnaugh-map}[4][4][1][][]
+    \maxterms{2,3,4,5,6,8,9,10,11,12,13,14,15}
+    \minterms{0,1,7}
+    \implicantedge{0}{4}{2}{6}
+    \implicantedge{0}{0}{8}{8}
+    % note: position for start of \draw is (0, Y) where Y is
+    % the Y size(number of cells high) in this case Y=2
+    \draw[color=black, ultra thin] (0, 4) --
+    node [pos=0.7, above right, anchor=south west] {$XW$} % YOU CAN CHANGE NAME OF VAR HERE, THE $X$ IS USED FOR ITALICS
+    node [pos=0.7, below left, anchor=north east] {$ZY$} % SAME FOR THIS
+    ++(135:1);
+        
+    \end{karnaugh-map}
+     
+     \section{simplified equation} 
+      $g = B'C'D'+ABCD'$
+     \end{document}
